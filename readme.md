@@ -25,10 +25,3 @@ There are 3 test accounts, those are : <br />
 
 <br />
 
-![Login Image](preview/login.png)
-![Dashboard](preview/dashboard.png)
-![Manage Cuti](preview/manage.png)
-![Pengajuan Cuti](preview/pengajuan.png)
-![Laporan Cuti](preview/laporan.png)
-
-
