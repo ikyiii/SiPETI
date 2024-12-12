@@ -66,8 +66,7 @@ class User_model extends CI_model
             divisi.divisi,
             jabatan.jabatan,
             user_profile.email,
-            user_profile.telp,
-            user_profile.tgl_masuk 
+            user_profile.telp 
         FROM
             `user`
             INNER JOIN `level` ON `user`.`level` = `level`.id
