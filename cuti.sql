@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 04:08 AM
+-- Generation Time: Dec 12, 2024 at 03:16 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -33,8 +33,8 @@ CREATE TABLE `cuti` (
   `id_jenis_cuti` int(11) NOT NULL,
   `tgl_pengajuan` timestamp NOT NULL DEFAULT current_timestamp(),
   `keterangan` varchar(64) NOT NULL,
-  `tgl_awal` date NOT NULL,
-  `tgl_akhir` date NOT NULL,
+  `tgl_awal` date DEFAULT NULL,
+  `tgl_akhir` date DEFAULT NULL,
   `status` varchar(30) NOT NULL DEFAULT 'Pending',
   `edited_by` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -44,15 +44,7 @@ CREATE TABLE `cuti` (
 --
 
 INSERT INTO `cuti` (`id`, `id_nip`, `id_jenis_cuti`, `tgl_pengajuan`, `keterangan`, `tgl_awal`, `tgl_akhir`, `status`, `edited_by`) VALUES
-(39, '2201020067', 1, '2024-11-05 04:11:32', 'malas', '2024-11-05', '2024-11-05', 'Approved', 'aziz'),
-(40, '2201020067', 1, '2024-11-10 04:08:48', 'kepo', '2024-11-10', '2024-11-10', 'Approved', 'ade'),
-(41, '12314134817', 1, '2024-11-26 04:01:28', 'malas', '2024-07-01', '2024-12-31', 'Approved', 'ade'),
-(42, '12314134817', 1, '2024-11-26 05:11:46', 'malas', '2024-11-26', '2024-11-27', 'Declined', 'aziz'),
-(43, '2201020067', 1, '2024-11-26 05:13:43', 'malas', '2024-11-26', '2024-11-29', 'Approved', 'ade'),
-(44, '12314134817', 1, '2024-11-26 05:17:46', 'malas', '2024-11-26', '2024-11-30', 'Approved', 'ade'),
-(45, '12314134817', 1, '2024-11-26 05:22:09', 'tak ada duit lek', '2024-11-26', '2024-11-30', 'Approved', 'ade'),
-(46, '12314134817', 1, '2024-11-26 05:28:05', 'tak ada duit lek', '2024-11-26', '2024-11-30', 'Approved', 'ade'),
-(47, '12314134817', 1, '2024-11-26 05:39:12', 'tak ada duit lek', '2024-11-26', '2024-11-30', 'Approved', 'ade');
+(52, '12314134817', 1, '2024-12-12 03:00:13', '', '2024-12-12', '2024-12-12', 'Approved', 'ade');
 
 -- --------------------------------------------------------
 
@@ -113,7 +105,8 @@ CREATE TABLE `jenis_cuti` (
 --
 
 INSERT INTO `jenis_cuti` (`id`, `jenis_cuti`, `value`) VALUES
-(1, 'Cuti Semester Akademik', 1);
+(1, 'CUTI SEMESTER GANJIL AKADEMIK', 1),
+(2, 'CUTI SEMESTER GENAP AKADEMIK', 2);
 
 -- --------------------------------------------------------
 
@@ -157,7 +150,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `level`) VALUES
 (26, 'aziz', '55ab6267a0fd9427486bcc5c01ef13b538a3612a', 2),
 (27, 'Renaldi', 'ab56c3afe88618044ce647d19836c27195f9ed4c', 3),
 (28, 'ade', 'd7f2e6a4093ffde1b599c934f8ec963badb6be32', 2),
-(30, 'obi', '0515c97eeb973b1af69d8639d53f1e21d99c0734', 3);
+(30, 'obi', '0515c97eeb973b1af69d8639d53f1e21d99c0734', 3),
+(31, 'halta', 'e0dac6a8a522392f460438f8a3101fe825cb3f90', 3);
 
 -- --------------------------------------------------------
 
@@ -173,20 +167,20 @@ CREATE TABLE `user_profile` (
   `divisi` int(11) NOT NULL,
   `jabatan` int(11) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `telp` varchar(30) NOT NULL,
-  `tgl_masuk` date NOT NULL
+  `telp` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_profile`
 --
 
-INSERT INTO `user_profile` (`id`, `nip`, `nama`, `kelamin`, `divisi`, `jabatan`, `email`, `telp`, `tgl_masuk`) VALUES
-(30, '12314134817', 'Obi Luter Sihombing', 'Laki-laki', 2, 3, '2201020066@student.umrah.ac.id', '7890987654345', '2024-11-10'),
-(1, '2201020065', 'Haikal Purnama Aji', 'Laki-laki', 3, 4, 'aderizky27@outlook.com', '081364365032', '2024-11-05'),
-(27, '2201020067', 'Renaldi Anicetus Simbolon', 'Laki-laki', 2, 3, 'aderizky27@outlook.com', '081364365032', '2024-11-05'),
-(28, '2201020093', 'Muhammad Ade Rizky', 'Laki-laki', 1, 2, 'aderisky056@gmail.com', '081364365033', '2024-11-10'),
-(26, '2201020095', 'Faalih Aziz T', 'Laki-laki', 1, 1, 'aderizky27@outlook.com', '081364365032', '2024-11-05');
+INSERT INTO `user_profile` (`id`, `nip`, `nama`, `kelamin`, `divisi`, `jabatan`, `email`, `telp`) VALUES
+(30, '12314134817', 'Obi Luter Sihombing', 'Laki-laki', 2, 3, '2201020066@student.umrah.ac.id', '7890987654345'),
+(1, '2201020065', 'Haikal Purnama Aji', 'Laki-laki', 3, 4, 'aderizky27@outlook.com', '081364365032'),
+(27, '2201020067', 'Renaldi Anicetus Simbolon', 'Laki-laki', 2, 3, 'aderizky27@outlook.com', '081364365032'),
+(31, '2201020092', 'halta p.a', 'Laki-laki', 2, 3, 'asjndgjsj@gmail.com', '09876543345'),
+(28, '2201020093', 'Muhammad Ade Rizky', 'Laki-laki', 1, 2, 'aderisky056@gmail.com', '081364365033'),
+(26, '2201020095', 'Faalih Aziz T', 'Laki-laki', 1, 1, 'aderizky27@outlook.com', '081364365032');
 
 --
 -- Indexes for dumped tables
@@ -249,7 +243,7 @@ ALTER TABLE `user_profile`
 -- AUTO_INCREMENT for table `cuti`
 --
 ALTER TABLE `cuti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `divisi`
@@ -279,7 +273,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables
