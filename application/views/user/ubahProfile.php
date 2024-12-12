@@ -62,12 +62,6 @@
                         </DIV>
                 </div>
 
-                <div class="form-group">
-                    <label for="tgl_masuk">Tanggal Masuk</label>
-                    <input type="text" class="form-control" name="tgl_masuk" id="tgl_masuk" placeholder="Tanggal Awal Masuk" value="<?= $profile['tgl_masuk']; ?>">
-                    <?= form_error('tgl_masuk', '<small class="text-danger pl-3">', '</small>'); ?>
-                </div>
-                
                 <button type="submit" class="btn btn-primary">Ubah</button>
                 
                 <?php if($anyprofile != 0 ) { ?>
