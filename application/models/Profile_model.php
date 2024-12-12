@@ -26,8 +26,7 @@ class Profile_model extends CI_model
             divisi.divisi,
             jabatan.jabatan,
             user_profile.email,
-            user_profile.telp,
-            user_profile.tgl_masuk 
+            user_profile.telp
         FROM
             divisi
             INNER JOIN jabatan ON divisi.id = jabatan.id_divisi
@@ -53,8 +52,7 @@ class Profile_model extends CI_model
             'divisi' => $this->input->post('divisi', TRUE),
             'jabatan' => $this->input->post('jabatan', TRUE),
             'email' => $this->input->post('email', TRUE),
-            'telp' => $this->input->post('telp', TRUE),
-            'tgl_masuk' => $this->input->post('tgl_masuk', TRUE),
+            'telp' => $this->input->post('telp', TRUE)
         ];
 
         $this->db->insert('user_profile', $data);
@@ -72,8 +70,7 @@ class Profile_model extends CI_model
             'divisi' => $this->input->post('divisi', TRUE),
             'jabatan' => $this->input->post('jabatan', TRUE),
             'email' => $this->input->post('email', TRUE),
-            'telp' => $this->input->post('telp', TRUE),
-            'tgl_masuk' => $this->input->post('tgl_masuk', TRUE),
+            'telp' => $this->input->post('telp', TRUE)
         ];
 
         $this->db->where('id', $this->input->post('id'));
