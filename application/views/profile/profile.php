@@ -40,10 +40,7 @@
                                 <td><b>No. Telp</b></td>
                                 <td><?= $profile['telp']; ?></td>
                             </tr>
-                            <tr>
-                                <td><b>Tanggal Awal Masuk</b></td>
-                                <td><?= $profile['tgl_masuk']; ?></td>
-                            </tr>
+						
                         <?php endforeach; ?>
                     <?php } else { ?>
                         <div class="alert alert-danger" role="alert">Data Kosong</div>
