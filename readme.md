@@ -17,11 +17,12 @@ There are 3 test accounts, those are : <br />
   User : admin <br />
   Pass : admin <br />
 - Dosen Account : <br />
-  User : Aziz <br />
+  User : aziz <br />
   Pass : aziz123<br />
+  User : halta <br />
+  Pass : halta123<br />
 - Mahasiswa Account : <br />
   User : paul <br />
   Pass : paul123 <br />
 
 <br />
-
