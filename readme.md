@@ -24,5 +24,9 @@ There are 3 test accounts, those are : <br />
 - Mahasiswa Account : <br />
   User : renaldi <br />
   Pass : renaldi123 <br />
+  user : obi <br/>
+  pass : obi123 <br/>
+  user : halta <br/>
+  pass : halta123 <br/>
 
 <br />
