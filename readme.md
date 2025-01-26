@@ -11,6 +11,8 @@
 **Put me in htdocs folder**<br />
 to access the web app write : [localhost:80](http://localhost/SiPETI) **_OR_** [localhost:modifiedPort](http://localhost:8080/SiPETI).
 
+**Put cuti.sql in databases folder**<br />
+
 There are 3 test accounts, those are : <br />
 
 - Admin Account : <br />
